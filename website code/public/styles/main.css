@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: Center;
+
+    margin: 0px;
+
+    font-family: Verdana, sans-serif;
+    color: #222222;
+}
+
+h1 {
+    margin: 64px;
+
+    font-family: Georgia, serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.compartment {
+    width: calc(100% - 256px);
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-right: 128px;
+    padding-left: 128px;
+
+    background-color: #f1f1f1;
+}
