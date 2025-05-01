@@ -8,16 +8,75 @@
     </head>
 
     <body>
-        <h1>Group Project API</h1>
+        <ul class="navbar">
+            <li class="navbar-tab">
+                <a class="navbar-link" href="#numCars">Number of Cars</a>
+            </li>
+            <li class="navbar-tab">
+                <a class="navbar-link" href="#avgCommission">Average Commission</a>
+            </li>
+            <li class="navbar-tab">
+                <a class="navbar-link" href="#numCustomersPerSalesperson">Number of Customers per Salesperson</a>
+            </li>
+            <li class="navbar-tab">
+                <a class="navbar-link" href="#mostProfitableCars">Top 5 Most Profitable Cars</a>
+            </li>
+            <li class="navbar-tab"  style="border: none;">
+                <a class="navbar-link" href="#createOwn">Create Your Own Query</a>
+            </li>
+        </ul>
 
         <div class="compartment">
-            <h3>Project Diagram</h3>
+            <h1>Car Company Database API</h1>
+        </div>
+
+        <div class="compartment2">
+            <h2>Project Diagram</h2>
             <img
+                class="project-diagram"
                 src="./images/initialProjectDiagram.png"
                 alt="initialProjectDiagram"
-                width="1024px"
-                style="margin: 32px, 128px; border: 1px solid #222222;"
             >
         </div>
+
+        <div class="compartment">
+            <h2>Queries</h2>
+            <div id="numCars" class="query-compartment">
+                <h3>Show the total number of cars sold and the average price they were sold at:</h3>
+                <p>Query: <code class="code">SELECT * FROM cars</code></p>
+                <div class="query-buttons-compartment">
+                    <form class="query-form" action="/queryOne" method="get">
+                        <input class="execute-button" type="submit" value="Execute" />
+                    </form>
+                    <form class="query-form" action="/" method="get">
+                        <input class="clear-button" type="submit" value="Clear" />
+                    </form>
+                </div>
+                <% if (queryOne) {
+                    queryOne.forEach(function(line) { %>
+                        <code><%= line %></code>
+                <%  });
+                } %>
+            </div>
+            <div id="avgCommission" class="query-compartment">
+                <h3>In the given time frame, show the average salesperson's commission per sale (grouped by job title):</h3>
+                <p>Query: <code class="code">SELECT * FROM cars</code></p>
+            </div>
+            <div id="numCustomersPerSalesperson" class="query-compartment">
+                <h3>Show the number of unique customers each salesperson has sold to within the given time range:</h3>
+                <p>Query: <code class="code">SELECT * FROM cars</code></p>
+            </div>
+            <div id="mostProfitableCars" class="query-compartment">
+                <h3>Show the top five most profitable car models base on the average profit per sale:</h3>
+                <p>Query: <code class="code">SELECT * FROM cars</code></p>
+            </div>
+        </div>
+        <div id="createOwn" class="compartment2">
+            <h2>Make Your Own Query</h2>
+        </div>
+
+        <footer class="compartment">
+            <p>© Dagan Spano, Jacob Schmitt, Cayden Hoffman</p>
+        </footer>
     </body>
 </html>
